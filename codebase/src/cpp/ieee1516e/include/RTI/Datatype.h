@@ -2,21 +2,22 @@
 #include "types/datatypes/IDatatypeClass.h" 
 #include <string>
 
-class IDatatype
+
+class Datatype
 {
 public:
-	IDatatype();
+	Datatype();
 
 	/**
 	* Returns the name of this datatype.
 	*/
-	virtual std::string getName();
+	virtual std::string getName() = 0;
 
 	/**
 	* Returns the FOM datatype class of this datatype (e.g. Basic, Simple, Enumerated, Array,
 	* Fixed Record or Variant).
 	*/
-	virtual DataHelper::DatatypeClass getDatatypeClass();
+	virtual DatatypeClass getDatatypeClass() = 0;
 
 	/**
 	* Creates a copy of this datatype with any dependent datatypes it references replaced by a
@@ -30,6 +31,6 @@ public:
 	*
 	* @return a copy of this datatype replaced with a {@link DatatypePlaceholder}
 	*/
-	virtual IDatatype createUnlinkedClone();
+	virtual shared_ptr<Datatype> createUnlinkedClone() = 0;
 
 };

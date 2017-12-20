@@ -1,15 +1,16 @@
 #pragma once
+#include "types/datatypes/PorticosDatatype.h" 
+#include <string>
 
-#include "common.h"
-#include "jni/Runtime.h"
-#include "jni/JavaRTI.h"
-#include "types/datatypes/IDatatype.h"
-#include "rtiamb/PorticoRtiAmbassador.h"
 
-class ObjectModel;
-class IDataType;
 
-class PorticoRtiAmbassadorEx : public PorticoRtiAmbassador {
+#pragma once
+
+#include "types/datatypes/PorticoDatatype.h" 
+
+
+
+class PorticoRTIAmbassadorEx : public RTIAmbassadorEx, PorticoRtiAmbassador {
 
 	//----------------------------------------------------------
 	//                   INSTANCE VARIABLES
@@ -24,7 +25,7 @@ public:
 
 	/*ObjectModel getFom();*/
 
-	IDatatype getAttributeDatatpe(ObjectClassHandle whichClass,
+	Datatype getAttributeDatatpe(ObjectClassHandle whichClass,
 	                              AttributeHandle theHandle)
 		throw(AttributeNotDefined,
 			InvalidAttributeHandle,
@@ -34,7 +35,7 @@ public:
 			RTIinternalError);
 		
 
-	IDatatype getParameterDatatype(InteractionClassHandle whichClass,
+	Datatype getParameterDatatype(InteractionClassHandle whichClass,
 	                               ParameterHandle theHandle)
 		throw (InteractionParameterNotDefined,
 			InvalidParameterHandle,

@@ -1,5 +1,5 @@
 #pragma once
-#include "types/datatypes/IDataClass.h" 
+#include "types/datatypes/IDatatypeClass.h" 
 #include <string>
 
 class IDatatype
@@ -10,13 +10,13 @@ public:
 	/**
 	* Returns the name of this datatype.
 	*/
-	std::string getName();
+	virtual std::string getName();
 
 	/**
 	* Returns the FOM datatype class of this datatype (e.g. Basic, Simple, Enumerated, Array,
 	* Fixed Record or Variant).
 	*/
-	DataHelper::DatatypeClass getDatatypeClass();
+	virtual DataHelper::DatatypeClass getDatatypeClass();
 
 	/**
 	* Creates a copy of this datatype with any dependent datatypes it references replaced by a
@@ -30,6 +30,6 @@ public:
 	*
 	* @return a copy of this datatype replaced with a {@link DatatypePlaceholder}
 	*/
-	IDatatype createUnlinkedClone();
+	virtual IDatatype createUnlinkedClone();
 
 };

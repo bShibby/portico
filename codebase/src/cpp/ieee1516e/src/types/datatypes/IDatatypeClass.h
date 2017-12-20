@@ -21,7 +21,7 @@ namespace DataHelper {
 	/**
 	* Represents the discrete datatypes that can be specified in the FOM.
 	*/
-	enum DatatypeClass
+	extern enum DatatypeClass
 	{
 		/**
 		* Underpinning of all OMT datatypes

@@ -1,12 +1,13 @@
 #pragma once
 #include "RTI/portico/types/DatatypeClass.h" 
+#include "RTI/SpecificConfig.h"
 #include <string>
 
 
-class Datatype
+class RTI_EXPORT Datatype
 {
 public:
-	Datatype();
+	Datatype(){}
 
 	/**
 	* Returns the name of this datatype.

@@ -1,9 +1,11 @@
 #pragma once
 
 #include <string> 
-#include "rtiamb/porticoRtiAmbassador.h"
+#include "rtiamb/PorticoRtiAmbassador.h"
+#include "RTI/portico/RTIambassadorEx.h"
 
-class PorticoRTIAmbassadorEx : public RTIambassadorEx, PorticoRtiAmbassador {
+
+class PorticoRtiAmbassadorEx : public RTIambassadorEx, PORTICO1516E_NS::PorticoRtiAmbassador {
 	
 	//----------------------------------------------------------
 	//                   INSTANCE VARIABLES
@@ -18,8 +20,8 @@ public:
 
 	/*ObjectModel getFom();*/
 
-	Datatype getAttributeDatatpe(const ObjectClassHandle& whichClass,
-	                              AttributeHandle theHandle)
+	Datatype* getAttributeDatatype(const rti1516e::ObjectClassHandle& whichClass,
+	                              const rti1516e::AttributeHandle &theHandle)
 		throw(AttributeNotDefined,
 			InvalidAttributeHandle,
 			InvalidObjectClassHandle,
@@ -28,8 +30,8 @@ public:
 			RTIinternalError);
 		
 
-	Datatype getParameterDatatype(const InteractionClassHandle& whichClass,
-	                               ParameterHandle theHandle)
+	Datatype* getParameterDatatype(const rti1516e::InteractionClassHandle& whichClass,
+	                               const rti1516e::ParameterHandle &theHandle)
 		throw (InteractionParameterNotDefined,
 			InvalidParameterHandle,
 			InvalidInteractionClassHandle,

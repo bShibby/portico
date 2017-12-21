@@ -1,7 +1,7 @@
 #pragma once
 
-#include <string> 
-  
+#include "RTI/portico/types/BasicDatatype.h"   
+
 
 BasicDatatype::BasicDatatype(const std::string& name, int size, Endianness endianness)
 {
@@ -11,18 +11,18 @@ BasicDatatype::BasicDatatype(const std::string& name, int size, Endianness endia
 }
 
  
-std::ostream& BasicDatatype::operator<<( std::ostream& os, const BasicDatatype& basicDataType )
+std::string toString( )
 {
-	os << endiannessToString( endianness ); 
+	return "BASIC"; 
 }
 
 
-std::ostream& BasicDatatype::operator==( const BasicDatatype& basicDataType, const BasicDatatype& otherBasicDataType )		
-{
-	return basicDataType.name == otherBasicDatatype.name && 
-		   basicDatatype.size == otherBasicDatatype.size &&
-		   basicDatatype.endianness == otherBasicDatatype.endianness;
-}
+//bool BasicDatatype::operator==( const BasicDatatype& otherBasicDatatype )		
+//{
+//	return this->name == otherBasicDatatype.name && 
+//		   this->size == otherBasicDatatype.size &&
+//		   this->endianness == otherBasicDatatype.endianness;
+//}
 
 
 Endianness BasicDatatype::getEndianness()
@@ -39,7 +39,7 @@ std::string BasicDatatype::getName()
  
 DatatypeClass BasicDatatype::getDatatypeClass()
 {
-	return DatatypeClass.BASIC;
+	return DatatypeClass::BASIC;
 }
  
  

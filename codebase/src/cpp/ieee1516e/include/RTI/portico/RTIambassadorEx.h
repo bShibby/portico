@@ -1,16 +1,14 @@
 #pragma once
 
-#include "RTI/Portico/types/Datatype.h"
-#include "RTI/RTIAmbassador.h"
+#include "RTI/portico/types/Datatype.h"
+#include "RTI/RTIambassador.h"
 
-class ObjectModel;
-class DataType;
-class RTIAmbassador;
+ 
 
 namespace rti1516e
 {
 
-	class RTIAmbassadorEx : public RTIAmbassador {
+	class RTIambassadorEx : public RTIambassador {
 		
 		//----------------------------------------------------------
 		//                   INSTANCE VARIABLES
@@ -25,8 +23,8 @@ namespace rti1516e
 
 		/*ObjectModel getFom();*/
 
-		virtual Datatype getAttributeDatatpe(ObjectClassHandle whichClass,
-		                                     AttributeHandle theHandle)
+		virtual Datatype getAttributeDatatpe(const ObjectClassHandle &whichClass,
+		                                     const AttributeHandle &theHandle)
 			throw(AttributeNotDefined,
 				InvalidAttributeHandle,
 				InvalidObjectClassHandle,
@@ -35,8 +33,8 @@ namespace rti1516e
 				RTIinternalError) = 0 ;
 		
 
-		virtual Datatype getParameterDatatype(InteractionClassHandle whichClass,
-		                                      ParameterHandle theHandle)
+		virtual Datatype getParameterDatatype(const InteractionClassHandle &whichClass,
+		                                      const ParameterHandle &theHandle)
 			throw (InteractionParameterNotDefined,
 				InvalidParameterHandle,
 				InvalidInteractionClassHandle,

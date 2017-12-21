@@ -1,13 +1,9 @@
 #pragma once
 
 #include <string> 
+#include "rtiamb/porticoRtiAmbassador.h"
 
-
-class RTIAmbassadorEx;
-class PorticoRtiAmbassador;
-class Datatype;
-
-class PorticoRTIAmbassadorEx : public RTIAmbassadorEx, PorticoRtiAmbassador {
+class PorticoRTIAmbassadorEx : public RTIambassadorEx, PorticoRtiAmbassador {
 	
 	//----------------------------------------------------------
 	//                   INSTANCE VARIABLES

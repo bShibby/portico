@@ -1,9 +1,9 @@
 #pragma once
 
-#include <string>
-#include "BasicDatatypeImp.h"
+#include <string> 
   
-BasicDatatypeImp::BasicDatatype(const std::string& name, int size, Endianness endianness)
+
+BasicDatatype::BasicDatatype(const std::string& name, int size, Endianness endianness)
 {
 	this->name = name;
 	this->size = size;
@@ -11,13 +11,13 @@ BasicDatatypeImp::BasicDatatype(const std::string& name, int size, Endianness en
 }
 
  
-std::ostream& BasicDatatypeImp::operator<<( std::ostream& os, const BasicDatatype& basicDataType )
+std::ostream& BasicDatatype::operator<<( std::ostream& os, const BasicDatatype& basicDataType )
 {
 	os << endiannessToString( endianness ); 
 }
 
 
-std::ostream& BasicDatatypeImp::operator==( const BasicDatatype& basicDataType, const BasicDatatype& otherBasicDataType )		
+std::ostream& BasicDatatype::operator==( const BasicDatatype& basicDataType, const BasicDatatype& otherBasicDataType )		
 {
 	return basicDataType.name == otherBasicDatatype.name && 
 		   basicDatatype.size == otherBasicDatatype.size &&
@@ -25,19 +25,19 @@ std::ostream& BasicDatatypeImp::operator==( const BasicDatatype& basicDataType, 
 }
 
 
-public Endianness BasicDatatypeImp::getEndianness()
+Endianness BasicDatatype::getEndianness()
 {
 	return this->endianness;
 }
 
  
-std::string BasicDatatypeImp::getName()
+std::string BasicDatatype::getName()
 {
 	return this->name;
 }
 
  
-DatatypeClass BasicDatatypeImp::getDatatypeClass()
+DatatypeClass BasicDatatype::getDatatypeClass()
 {
 	return DatatypeClass.BASIC;
 }

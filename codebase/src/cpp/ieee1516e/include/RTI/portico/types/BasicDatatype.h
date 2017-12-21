@@ -1,13 +1,14 @@
 #pragma once
 
-#include "RTI/Portico/types/PorticoDatatypeClass.h" 
-#include "RTI/Portico/types/Endianness.h" 
+#include "RTI/portico/types/DatatypeClass.h" 
+#include "RTI/portico/Datatype.h"
+#include "RTI/portico/types/Endianness.h" 
 #include <string>
 
 
 class BasicDatatype : public DataType
 {
-	class Datatype;	
+
 private:
 
 	private std::string	name;			/// The name of this datatype
@@ -46,7 +47,7 @@ public:
 	 * 
 	 * @return otherBasicDataType A basic data type to compare to
 	 */
-	public Endianness getEndianness();
+	Endianness getEndianness();
 
 
 	//////////////////////////////////////////////////////////////////////////////////////

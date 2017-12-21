@@ -1,5 +1,5 @@
 #pragma once
-#include "RTI/Portico/types/DatatypeClass.h" 
+#include "RTI/portico/types/DatatypeClass.h" 
 #include <string>
 
 

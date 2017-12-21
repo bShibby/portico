@@ -264,6 +264,10 @@ class JavaRTI
 		jmethodID DISABLE_CALLBACKS;
 		jmethodID GET_HLA_VERSION;
 		jmethodID KILL;
+
+		//custom portico
+		jmethodID GET_ATTRIBUTE_DATATYPE;
+		jmethodID GET_PARAMETER_DATATYPE;
 };
 
 PORTICO1516E_NS_END

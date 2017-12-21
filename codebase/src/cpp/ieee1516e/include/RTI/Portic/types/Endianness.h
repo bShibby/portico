@@ -17,7 +17,7 @@
 /**
  * Describes the byte ordering of {@link BasicType} datatypes.
  */
-enum class EndiannessType 
+enum EndiannessType 
 {
 	LITTLE, 
 	BIG;
@@ -41,7 +41,7 @@ private:
 
 public:
 
-	Endinanness(EndiannessType type);
+	Endinanness(const EndiannessType& type);
 
 
 	/**
@@ -65,7 +65,7 @@ public:
 	* If the provided string matches (ignoring case) the name of either
 	* endianness type, that type is returned. Otherwise an exception is thrown
 	*/
-	Endianness fromFomString( std::string fomString ); //throws JConfigurationException
+	Endianness fromFomString(const std::string& fomString ); //throws JConfigurationException
 }
 
 

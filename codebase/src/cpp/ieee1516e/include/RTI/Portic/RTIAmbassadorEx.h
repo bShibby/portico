@@ -1,16 +1,17 @@
 #pragma once
 
-#include "RTI/Datatype.h"
+#include "RTI/Portico/types/Datatype.h"
 #include "RTI/RTIAmbassador.h"
 
 class ObjectModel;
 class DataType;
+class RTIAmbassador;
 
 namespace rti1516e
 {
 
 	class RTIAmbassadorEx : public RTIAmbassador {
-
+		
 		//----------------------------------------------------------
 		//                   INSTANCE VARIABLES
 		//----------------------------------------------------------

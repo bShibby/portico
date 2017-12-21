@@ -1,4 +1,4 @@
-#include "rtiamb/PorticoRtiAmbassadorEx.h"
+#include "Portico/PorticoRtiAmbassadorEx.h"
 
  
 
@@ -7,14 +7,14 @@
 //	return ObjectModel();
 //}
 
-Datatype PorticoRtiAmbassadorEx::getAttributeDatatpe(ObjectClassHandle whichClass, 
+Datatype PorticoRtiAmbassadorEx::getAttributeDatatpe(const ObjectClassHandle& whichClass, 
 	                                                  AttributeHandle theHandle) 
 {
  
 }
 
 
-Datatype  PorticoRtiAmbassadorEx::getParameterDatatype(InteractionClassHandle whichClass,
+Datatype  PorticoRtiAmbassadorEx::getParameterDatatype(const InteractionClassHandle& whichClass,
 	                                                    ParameterHandle theHandle) 
 {
 

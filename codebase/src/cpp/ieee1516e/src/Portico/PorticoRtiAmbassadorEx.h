@@ -1,17 +1,14 @@
 #pragma once
-#include "types/datatypes/PorticosDatatype.h" 
-#include <string>
+
+#include <string> 
 
 
-
-#pragma once
-
-#include "types/datatypes/PorticoDatatype.h" 
-
-
+class RTIAmbassadorEx;
+class PorticoRtiAmbassador;
+class Datatype;
 
 class PorticoRTIAmbassadorEx : public RTIAmbassadorEx, PorticoRtiAmbassador {
-
+	
 	//----------------------------------------------------------
 	//                   INSTANCE VARIABLES
 	//----------------------------------------------------------
@@ -25,7 +22,7 @@ public:
 
 	/*ObjectModel getFom();*/
 
-	Datatype getAttributeDatatpe(ObjectClassHandle whichClass,
+	Datatype getAttributeDatatpe(const ObjectClassHandle& whichClass,
 	                              AttributeHandle theHandle)
 		throw(AttributeNotDefined,
 			InvalidAttributeHandle,
@@ -35,7 +32,7 @@ public:
 			RTIinternalError);
 		
 
-	Datatype getParameterDatatype(InteractionClassHandle whichClass,
+	Datatype getParameterDatatype(const InteractionClassHandle& whichClass,
 	                               ParameterHandle theHandle)
 		throw (InteractionParameterNotDefined,
 			InvalidParameterHandle,

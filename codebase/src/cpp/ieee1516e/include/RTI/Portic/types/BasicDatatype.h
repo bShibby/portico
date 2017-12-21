@@ -1,22 +1,18 @@
 #pragma once
 
-#include "types/datatypes/PorticoDatatypeClass.h" 
-#include "types/datatypes/Endianness.h" 
+#include "RTI/Portico/types/PorticoDatatypeClass.h" 
+#include "RTI/Portico/types/Endianness.h" 
 #include <string>
 
 
 class BasicDatatype : public DataType
 {
-
+	class Datatype;	
 private:
-	//----------------------------------------------------------
-	//                    STATIC VARIABLES
-	//----------------------------------------------------------
-	const long SERIAL_VERSION_UID;
 
-	private std::string	name;
-	private int			size;
-	private Endianness	endianness;
+	private std::string	name;			/// The name of this datatype
+	private int			size;			/// The size of this datatype
+	private Endianness	endianness;		/// The endianness of this datatype
 	
 public:
 
@@ -27,7 +23,7 @@ public:
 	 * @param size the size of this data type in bits
 	 * @param endianness the byte ordering of this data type
 	 */
-	BasicDatatype(std::string name, int size, Endianness endianness);
+	BasicDatatype(const std::string& name, int size, Endianness endianness);
 
 	/**
 	 * Overload the ostream operator
@@ -43,8 +39,13 @@ public:
 	 * @param basicDataType A basic data type to compare
 	 * @param otherBasicDataType A basic data type to compare to
 	 */
-	std::ostream& operator<<( const BasicDatatype& basicDataType, const BasicDatatype& otherBasicDataType );
+	std::ostream& operator==( const BasicDatatype& basicDataType, const BasicDatatype& otherBasicDataType );
 
+	/**
+	 * Get the endianness of thei datatype.
+	 * 
+	 * @return otherBasicDataType A basic data type to compare to
+	 */
 	public Endianness getEndianness();
 
 
@@ -62,19 +63,5 @@ public:
 	* Fixed Record or Variant).
 	*/
 	DatatypeClass getDatatypeClass();
-
-	/**
-	* Creates a copy of this datatype with any dependent datatypes it references replaced by a
-	* {@link DatatypePlaceholder}.
-	* <p/>
-	* This method is used by the model merger while it imports extension datatypes into a base
-	* model. As dependent datatypes may not have been imported at the time this datatype is
-	* imported into the base model, the placeholder is used as a temporary reference. After all
-	* extension datatypes have been imported into the base model, all placeholder types will
-	* be resolved to their actual representations.
-	*
-	* @return a copy of this datatype replaced with a {@link DatatypePlaceholder}
-	*/
-	shared_ptr<BasicDatatype> createUnlinkedClone();
-
+ 
 };

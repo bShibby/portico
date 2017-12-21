@@ -13,46 +13,46 @@
  *
  */
 #include <string>
- 
 
-Endinanness(EndiannessType type)
+ 
+Endinanness::Endinanness(const EndiannessType &type)
 {
 	this->endianness = type;
 }
 	 
 
-std::string endiannessToString()
+std::string Endinanness::endiannessToString()
 {
 	switch( this->endianness )
 	{
-	case LITTLE:
+		case EndiannessType::LITTLE:
 		return "Little";
 	default:
-	case BIG:
+		case EndiannessType::BIG:
 		return "Big";
 	}
 }
 
 
-std::ostream& operator<<( std::ostream& os, const Endianness& endianness )
+std::ostream& Endinanness::operator<<( std::ostream& os, const Endianness& endianness )
 {
 	os << endiannessToString( endianness ); 
 }
 
 
-bool operator==( const Endianness& endianness, const Endianness& otherEndianness )
+bool Endinanness::operator==( const Endianness& endianness, const Endianness& otherEndianness )
 {
-	return endianness->endiannessToString() == otherEndianness->endiannessToString();
+	return endianness.endianness == otherEndianness.endianness;
 }
 
 
-public static Endianness fromFomString( std::string fomString ) throws JConfigurationException
+Endianness Endinanness::fromFomString( std::string fomString ) throws JConfigurationException
 {
 	// need to change to case insensitive laterz. 
 	if( fomString == "little") )
-		return LITTLE;
+		return EndiannessType::LITTLE;
 	else if( ffomString == "big" )
-		return BIG;
+		return EndiannessType::BIG;
 	else
 		//throw new JConfigurationException( "Unsupported Endianness found: " + fomString ); need to suss out the exceptions available
 }
